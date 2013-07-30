@@ -32,5 +32,7 @@ exports.cli = function() {
         } else {
             console.log('╮(╯_╰)╭ 没有这个情绪类别哦。。要不你帮我加上？欢迎fork && PR：https://github.com/turingou/o3o')
         }
+    } else {
+        console.log('╮(╯_╰)╭ 没有这个情绪类别哦。。要不你帮我加上？欢迎fork && PR：https://github.com/turingou/o3o')
     }
 }
