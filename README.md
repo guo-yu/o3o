@@ -22,17 +22,17 @@ console.log(o3o.fetch('cry')); // will output π__π
 ### o3o.fetch(type) 
 
 - `type` [String] :
-    - smile
-    - laugh
-    - cheer
-    - sad
-    - cry
-    - wtf
-    - surprise
-    - chill
-    - shy
-    - wanna
-    - release
+    - smile ＾∀＾
+    - laugh (/≥▽≤/)
+    - anger o(￣ヘ￣o＃)
+    - cry ಥ_ಥ
+    - wtf （╯－＿－）╯╧╧
+    - surprise （°ο°）
+    - chill ╮(╯_╰)╭
+    - shy o(*////▽////*)q
+    - wanna ˋ▽ˊ
+    - kiss (╭￣3￣)╭♡
+    - bye (｡･ω･)ﾉﾞ
 
 ## Run unit-test (Mocha)
 
