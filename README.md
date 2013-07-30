@@ -1,6 +1,6 @@
-# o3o
+# o3o ![npm](https://badge.fury.io/js/o3o.png)
 
-ascii emoticon store based on Node.js
+(＞ω＜) ascii emoticon store based on Node.js
 
 ## How to install
 
