@@ -34,7 +34,7 @@ console.log(o3o.fetch('cry')); // will output π__π
     - wanna
     - release
 
-## Run unit-text (Mocha)
+## Run unit-test (Mocha)
 
 ````
 $ git clone https://github.com/turingou/o3o.git
