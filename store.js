@@ -1,6 +1,6 @@
 // store
 var fs = require('fs'),
-    Store = JSON.parse(fs.readFileSync('./store.json'));
+    Store = JSON.parse(fs.readFileSync( __dirname + '/store.json'));
     
 exports.check = function(type) {
     if (type && typeof(type) == 'string') {
