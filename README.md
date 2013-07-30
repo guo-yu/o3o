@@ -17,6 +17,12 @@ console.log(o3o.fetch('smile')); // will output (●'◡'●)ﾉ♥
 console.log(o3o.fetch('cry')); // will output π__π
 ````
 
+## Use CLI
+````
+$ o3o smile
+$ ＾∀＾ 
+````
+
 ## API
 
 ### o3o.fetch(type) 
