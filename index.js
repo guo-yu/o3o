@@ -4,7 +4,7 @@
 // / /_/ /__/ / /_/ /
 // \____/____/\____/ 
 //
-// 
+// ascii emoticon store based on Node.js
 
 exports.gen = function() {
     
