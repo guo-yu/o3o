@@ -1,10 +1,13 @@
 {
   "name": "o3o",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "ascii emoticon store based on Node.js",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha ./test.js"
+  },
+  "bin": {
+    "o3o": "./bin/cli"
   },
   "keywords": [
     "emoji",
@@ -21,7 +24,8 @@
   "author": "turing",
   "license": "MIT",
   "dependencies": {
-    "chance": "*"
+    "chance": "*",
+    "optimist":"*"
   },
   "devDependencies": {
     "mocha": "*",
