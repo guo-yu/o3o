@@ -19,6 +19,7 @@ console.log(o3o.fetch('cry')); // will output π__π
 
 ## Use CLI
 ````
+$ sudo npm install o3o -g
 $ o3o smile
 $ ＾∀＾ 
 ````
