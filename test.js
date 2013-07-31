@@ -3,7 +3,14 @@ var main = require('./index'),
     store = require('./store'),
     should = require('should');
 
-describe('FETCH', function() {
+describe('Available', function() {
+    it('should return a available list', function() {
+        var list = main.available();
+        list.should.be.an.instanceof(Array)
+    });
+});
+
+describe('Fetch', function() {
     it('should fetch a ascii emoticon from right type', function() {
         var type = 'laugh';
         var type2 = '摊手';
@@ -12,7 +19,7 @@ describe('FETCH', function() {
     });
 });
 
-describe('CHECK', function() {
+describe('Check', function() {
     it('should check type right', function() {
         var type = store.check('fajesqsqwsq'),
             type2 = store.check('laugh');
