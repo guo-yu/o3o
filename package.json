@@ -30,6 +30,7 @@
   "devDependencies": {
     "mocha": "*",
     "should": "*",
-    "cli-color": "*" 
+    "cli-color": "*",
+    "clipboard":"*"
   }
 }
