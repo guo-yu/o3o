@@ -40,6 +40,7 @@ $ ＾∀＾
     - wanna ˋ▽ˊ
     - kiss (╭￣3￣)╭♡
     - bye (｡･ω･)ﾉﾞ
+    - wanna more ? check out [yan.json](https://github.com/turingou/o3o/blob/master/yan.json) and type `tag` to search
 
 ## Run unit-test (Mocha)
 
@@ -49,3 +50,7 @@ $ cd o3o
 $ npm install 
 $ npm test
 ````
+
+## Changelog
+
+- `0.0.4` thx @sivaGao , more than 1000 emoticons added !!

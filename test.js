@@ -6,13 +6,15 @@ var main = require('./index'),
 describe('FETCH', function() {
     it('should fetch a ascii emoticon from right type', function() {
         var type = 'laugh';
+        var type2 = '摊手';
         (store.list[type].indexOf(main.fetch(type))).should.be.above(-1);
+        (store.list[type2].indexOf(main.fetch(type2))).should.be.above(-1);
     });
 });
 
 describe('CHECK', function() {
     it('should check type right', function() {
-        var type = store.check('abc'),
+        var type = store.check('fajesqsqwsq'),
             type2 = store.check('laugh');
         type.should.equal(false);
         type2.should.equal(true);

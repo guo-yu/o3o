@@ -1,16 +1,19 @@
 // store
-var yanwenzidata = require('./yanwenzidata').yanwenzidata;
+var yans = require('./yan.json').list;
 
-var Store = {};
-
-yanwenzidata.forEach(function(l) {
-  l.text.split(" ").forEach(function(ll) {
-    Store[ll] = l.yan;
-  });
-});
+exports.createList = function() {
+    var Store = {};
+    yans.forEach(function(l) {
+      l.tag.split(" ").forEach(function(ll) {
+        Store[ll] = l.yan;
+      });
+    });
+    return Store;
+};
 
 exports.check = function(type) {
+    var Store = exports.createList();
 	return Object.prototype.hasOwnProperty.call(Store, type);
 };
 
-exports.list = Store;
+exports.list = exports.createList();
