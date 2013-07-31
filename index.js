@@ -15,24 +15,36 @@ exports.fetch = function(type) {
     if (store.check(type)) {
         var list = store.list[type],
             chance = new Chance(),
-            one = chance.integer({min: 0, max: list.length - 1});
+            one = chance.integer({
+                min: 0,
+                max: list.length - 1
+            });
         return list[one];
     } else {
         return false;
     }
 }
 
+exports.available = function() {
+    return store.list.available;
+}
+
 exports.cli = function() {
     var type = argv._;
+    var fail = exports.fetch('摊手') + '没有这个情绪类别哦。。要不你帮我加上？欢迎fork && PR：https://github.com/turingou/o3o';
     if (type.length == 1) {
-        var s = exports.fetch(type[0]);
-        if (s) {
-            console.log(s);
-            return false;
+        if (type[0] == 'ls') {
+            console.log(exports.available())
         } else {
-            console.log('╮(╯_╰)╭ 没有这个情绪类别哦。。要不你帮我加上？欢迎fork && PR：https://github.com/turingou/o3o')
+            var s = exports.fetch(type[0]);
+            if (s) {
+                console.log(s);
+                return false;
+            } else {
+                console.log(fail)
+            }
         }
     } else {
-        console.log('╮(╯_╰)╭ 没有这个情绪类别哦。。要不你帮我加上？欢迎fork && PR：https://github.com/turingou/o3o')
+        console.log(fail)
     }
 }

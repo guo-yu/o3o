@@ -22,6 +22,23 @@ console.log(o3o.fetch('cry')); // will output π__π
 $ sudo npm install o3o -g
 $ o3o smile
 $ ＾∀＾ 
+
+// list all available tags
+$ o3o ls // short of list
+// results
+['laugh 笑',
+  'wanna',
+  'chill 摊手 手',
+  'smile',
+  'angry 生气 上火 恼 怒 疯 啊 草 cao 靠 kao',
+  '猪 zhu pig',
+  'sorry 错 道歉 该打 跪 cuo'
+  ...... ]
+
+// or random
+$ o3o available // list ONLY one available type
+// result
+song sing 唱 歌
 ````
 
 ## API
@@ -42,6 +59,9 @@ $ ＾∀＾
     - bye (｡･ω･)ﾉﾞ
     - wanna more ? check out [yan.json](https://github.com/turingou/o3o/blob/master/yan.json) and type `tag` to search
 
+### o3o.available() 
+    - return [Array] list all available `tags` to search
+
 ## Run unit-test (Mocha)
 
 ````
@@ -53,4 +73,5 @@ $ npm test
 
 ## Changelog
 
-- `0.0.4` thx @sivaGao , more than 1000 emoticons added !!
+- `0.0.5` support list all available emoticons
+- `0.0.4` thx [@sivaGao](https://github.com/ghlndsl) , more than 1000 emoticons added !!

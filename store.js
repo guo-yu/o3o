@@ -3,7 +3,9 @@ var yans = require('./yan.json').list;
 
 exports.createList = function() {
     var Store = {};
+    Store['available'] = [];
     yans.forEach(function(l) {
+      Store.available.push(l.tag);
       l.tag.split(" ").forEach(function(ll) {
         Store[ll] = l.yan;
       });
