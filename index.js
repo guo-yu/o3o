@@ -39,10 +39,10 @@ exports.cli = function() {
         if (type[0] == 'ls' || type[0] == 'list') {
             console.log(exports.available())
         } else {
-            
+            var print = ""
             for(var i in type){
                 var c = 15;
-                var print = ""
+                
                 if(argv.c == 'r'){
                     chance = new Chance(),
                     c = chance.integer({
@@ -54,13 +54,14 @@ exports.cli = function() {
                 var s = exports.fetch(type[i]);
                 if (s) {
                     console.log(color.xterm(c)(s));
-                    clip.copy(print += (s + " "));
+                    print += (s + " ");
                 } else {
                     console.log(fail)
                     return false;
                 }
                 
             }    
+            clip.copy(print);
             
         }
     } else {
