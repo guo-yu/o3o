@@ -11,6 +11,7 @@ var store = require('./store'),
     argv = optimist.argv,
     Chance = require('chance');
     color = require('cli-color');
+    clip = require('copy-paste');
 
 exports.fetch = function(type) {
     if (store.check(type)) {
@@ -41,6 +42,7 @@ exports.cli = function() {
             
             for(var i in type){
                 var c = 15;
+                var print = ""
                 if(argv.c == 'r'){
                     chance = new Chance(),
                     c = chance.integer({
@@ -52,6 +54,7 @@ exports.cli = function() {
                 var s = exports.fetch(type[i]);
                 if (s) {
                     console.log(color.xterm(c)(s));
+                    clip.copy(print += (s + " "));
                 } else {
                     console.log(fail)
                     return false;
