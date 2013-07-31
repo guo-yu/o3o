@@ -66,7 +66,7 @@ song sing 唱 歌
 
 ## Rebound
 
-- [o3o Workflow for Alfred 2](http://lucifr.com/2013/08/01/o3o-workflow-for-alfred/) 
+- [o3o Workflow for Alfred 2](http://lucifr.com/2013/08/01/o3o-workflow-for-alfred/) by lucifr
 
 ## Run unit-test (Mocha)
 
