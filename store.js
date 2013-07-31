@@ -1,21 +1,16 @@
 // store
-var fs = require('fs'),
-    Store = JSON.parse(fs.readFileSync( __dirname + '/store.json'));
-    
+var yanwenzidata = require('./yanwenzidata').yanwenzidata;
+
+var Store = {};
+
+yanwenzidata.forEach(function(l) {
+  l.text.split(" ").forEach(function(ll) {
+    Store[ll] = l.yan;
+  });
+});
+
 exports.check = function(type) {
-    if (type && typeof(type) == 'string') {
-        var list = [];
-        for (var key in Store) {
-            list.push(key);
-        };
-        if (list.indexOf(type) > -1) {
-            return true
-        } else {
-            return false
-        }
-    } else {
-        return false;
-    }
-}
+	return Object.prototype.hasOwnProperty.call(Store, type);
+};
 
 exports.list = Store;
