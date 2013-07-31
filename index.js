@@ -31,6 +31,28 @@ exports.available = function() {
     return store.list.available;
 }
 
+exports.ramcolor = function(word,de){
+    var c = 15;
+    if(de){
+        chance = new Chance(),
+        c = chance.integer({
+             min: 0,
+             max: 231
+        }); 
+    }
+    return color.xterm(c)(word);
+}
+
+exports.copy = function(word,cb){
+    clip.copy(word,function(){});
+    cb();
+
+}
+exports.paste = function(cb){
+   return clip.paste(cb);
+}
+
+
 exports.cli = function() {
     var type = argv._;
 
@@ -41,19 +63,9 @@ exports.cli = function() {
         } else {
             var print = ""
             for(var i in type){
-                var c = 15;
-                
-                if(argv.c == 'r'){
-                    chance = new Chance(),
-                    c = chance.integer({
-                        min: 0,
-                        max: 231
-                    });
-                }
-
                 var s = exports.fetch(type[i]);
                 if (s) {
-                    console.log(color.xterm(c)(s));
+                    console.log(exports.ramcolor(s,argv.c == 'r'));
                     print += (s + " ");
                 } else {
                     console.log(fail)
@@ -61,7 +73,9 @@ exports.cli = function() {
                 }
                 
             }    
-            clip.copy(print);
+            exports.copy(print,function(){
+                console.log(exports.ramcolor('复制到剪贴板啦！！',true));
+            });
             
         }
     } else {
