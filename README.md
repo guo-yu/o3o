@@ -3,7 +3,6 @@
 (＞ω＜) ascii emoticon store based on Node.js
 
 ![screenshot](http://ww4.sinaimg.cn/large/61ff0de3gw1e760rs12a6j20ln0fbq52.jpg)
-
 ## How to install
 
 ````
@@ -64,6 +63,10 @@ song sing 唱 歌
 ### o3o.available():
 
 - `return` [Array] list all available `tags` to search
+
+## Rebound
+
+- [o3o Workflow for Alfred 2](http://lucifr.com/2013/08/01/o3o-workflow-for-alfred/) 
 
 ## Run unit-test (Mocha)
 
