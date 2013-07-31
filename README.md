@@ -1,6 +1,6 @@
 # o3o ![npm](https://badge.fury.io/js/o3o.png)
 
-(＞ω＜) ascii emoticon store based on Node.js
+(＞ω＜) ascii emoticon generator based on Node.js
 
 ![screenshot](http://ww4.sinaimg.cn/large/61ff0de3gw1e760rs12a6j20ln0fbq52.jpg)
 ## How to install
@@ -60,9 +60,16 @@ song sing 唱 歌
     - bye (｡･ω･)ﾉﾞ
     - wanna more ? check out [yan.json](https://github.com/turingou/o3o/blob/master/yan.json) and type `tag` to search
 
-### o3o.available():
+### o3o.available()
 
 - `return` [Array] list all available `tags` to search
+
+## Pull Request Welcome !
+
+- fork this repo
+- feel free to add your feature or emoticons
+- make sure your feature are fully tested!
+- send me a PR, and enjoy !
 
 ## Rebound
 
