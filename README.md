@@ -2,6 +2,8 @@
 
 (＞ω＜) ascii emoticon store based on Node.js
 
+![screenshot](http://ww4.sinaimg.cn/large/61ff0de3gw1e760rs12a6j20ln0fbq52.jpg)
+
 ## How to install
 
 ````
@@ -59,8 +61,9 @@ song sing 唱 歌
     - bye (｡･ω･)ﾉﾞ
     - wanna more ? check out [yan.json](https://github.com/turingou/o3o/blob/master/yan.json) and type `tag` to search
 
-### o3o.available() 
-    - return [Array] list all available `tags` to search
+### o3o.available():
+
+- `return` [Array] list all available `tags` to search
 
 ## Run unit-test (Mocha)
 
