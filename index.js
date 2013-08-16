@@ -40,7 +40,6 @@ exports.cli = function() {
             if (s) {
 
                 if (argv.gbk) {
-                    require('copy-paste');
                     var Iconv = require('iconv').Iconv;
                     var iconv = new Iconv('UTF-8', 'GBK//IGNORE');
 
