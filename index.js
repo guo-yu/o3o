@@ -30,30 +30,43 @@ exports.available = function() {
 }
 
 exports.cli = function() {
-    var type = argv._;
-    var fail = exports.fetch('摊手') + '没有这个情绪类别哦。。要不你帮我加上？欢迎fork && PR：https://github.com/turingou/o3o';
-    if (type.length == 1) {
-        if (type[0] == 'ls') {
-            console.log(exports.available())
-        } else {
-            var s = exports.fetch(type[0]);
-            if (s) {
-
-                if (argv.gbk) {
-                    var Iconv = require('iconv').Iconv;
-                    var iconv = new Iconv('UTF-8', 'GBK//IGNORE');
-
-                    s = iconv.convert(s);
-                }
-
-                process.stdout.write(s);
-
-                return false;
-            } else {
-                console.log(fail)
-            }
-        }
+    
+    if (argv.stdin) {
+        var readline = require('readline');
+        var rl = readline.createInterface({
+            input: process.stdin,
+            output: process.stdout
+        });
+        
+        rl.question('', function(type) {
+            rl.close();
+            cliResponse(type.trim());
+        });
     } else {
-        console.log(fail)
+        cliResponse(argv._[0]);
+    }
+}
+
+function cliResponse(type)
+{
+    var fail = exports.fetch('摊手') + '没有这个情绪类别哦。。要不你帮我加上？欢迎fork && PR：https://github.com/turingou/o3o';
+    
+    if (type == 'ls') {
+        console.log(exports.available())
+    } else {
+        var s = exports.fetch(type);
+        if (s) {
+
+            if (argv.gbk) {
+                var Iconv = require('iconv').Iconv;
+                var iconv = new Iconv('UTF-8', 'GBK//IGNORE');
+
+                s = iconv.convert(s);
+            }
+
+            process.stdout.write(s);
+        } else {
+            console.log(fail);
+        }
     }
 }
