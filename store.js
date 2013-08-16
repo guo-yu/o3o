@@ -5,10 +5,14 @@ exports.createList = function() {
     var Store = {};
     Store['available'] = [];
     yans.forEach(function(l) {
-      Store.available.push(l.tag);
-      l.tag.split(" ").forEach(function(ll) {
-        Store[ll] = l.yan;
-      });
+        Store.available.push(l.tag);
+        l.tag.split(" ").forEach(function(ll) {
+            if (typeof Store[ll] == 'undefined') {
+                Store[ll] = l.yan;
+            } else {
+                Store[ll] = Store[ll].concat(l.yan);
+            }
+        });
     });
     return Store;
 };
