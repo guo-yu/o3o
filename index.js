@@ -47,26 +47,43 @@ exports.cli = function() {
     }
 }
 
-function cliResponse(type)
-{
+function convertToGBK(s) {
+    var Iconv = require('iconv').Iconv;
+    var iconv = new Iconv('UTF-8', 'GBK//IGNORE');
+    
+    return iconv.convert(s);
+}
+
+function cliResponse(type) {
+
     var fail = exports.fetch('摊手') + '没有这个情绪类别哦。。要不你帮我加上？欢迎fork && PR：https://github.com/turingou/o3o';
     
     if (type == 'ls') {
-        console.log(exports.available())
+        
+        var s = JSON.stringify(exports.available(), null, 4);
+
+        if (argv.gbk) {
+            s = convertToGBK(s);
+        }
+
+        process.stdout.write(s);
+
     } else {
+
         var s = exports.fetch(type);
+
         if (s) {
 
             if (argv.gbk) {
-                var Iconv = require('iconv').Iconv;
-                var iconv = new Iconv('UTF-8', 'GBK//IGNORE');
-
-                s = iconv.convert(s);
+                s = convertToGBK(s)
             }
 
             process.stdout.write(s);
+
         } else {
+
             console.log(fail);
+
         }
     }
 }
