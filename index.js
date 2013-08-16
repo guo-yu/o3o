@@ -39,12 +39,16 @@ exports.cli = function() {
             var s = exports.fetch(type[0]);
             if (s) {
 
-                if (argv.c) {
+                if (argv.gbk) {
                     require('copy-paste');
-                    copy(s);
+                    var Iconv = require('iconv').Iconv;
+                    var iconv = new Iconv('UTF-8', 'GBK//IGNORE');
+
+                    s = iconv.convert(s);
                 }
 
-                console.log(s);
+                process.stdout.write(s);
+
                 return false;
             } else {
                 console.log(fail)

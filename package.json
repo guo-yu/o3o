@@ -25,7 +25,8 @@
   "license": "MIT",
   "dependencies": {
     "chance": "*",
-    "optimist":"*"
+    "optimist": "*",
+    "iconv": "*"
   },
   "devDependencies": {
     "mocha": "*",
