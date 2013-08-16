@@ -38,6 +38,12 @@ exports.cli = function() {
         } else {
             var s = exports.fetch(type[0]);
             if (s) {
+
+                if (argv.c) {
+                    require('copy-paste');
+                    copy(s);
+                }
+
                 console.log(s);
                 return false;
             } else {
