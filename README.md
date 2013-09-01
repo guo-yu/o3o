@@ -42,6 +42,12 @@ $ o3o available // list ONLY one available type
 song sing 唱 歌
 ````
 
+## Copy to clipboard with CLI (Windows)
+
+```
+o3o smile --gbk|clip
+```
+
 ## API
 
 ### o3o.fetch(type) 
