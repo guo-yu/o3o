@@ -3,6 +3,7 @@ var main = require('./index'),
     store = require('./store'),
     should = require('should');
 
+
 describe('Available', function() {
     it('should return a available list', function() {
         var list = main.available();
@@ -25,5 +26,15 @@ describe('Check', function() {
             type2 = store.check('laugh');
         type.should.equal(false);
         type2.should.equal(true);
+    });
+});
+
+describe('copy', function(){
+    it('copy', function(){
+        var param = 'cao'
+        main.copy(param);
+        var output = main.paste()
+        output.should.equal(param);
+
     });
 });

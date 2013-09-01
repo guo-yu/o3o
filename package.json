@@ -29,6 +29,8 @@
   },
   "devDependencies": {
     "mocha": "*",
-    "should": "*"
+    "should": "*",
+    "cli-color": "*",
+    "clipboard":"*"
   }
 }
