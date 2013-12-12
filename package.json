@@ -3,8 +3,10 @@
   "version": "0.0.6",
   "description": "ascii emoticon generator based on Node.js",
   "main": "index.js",
+  "author": "turing",
+  "license": "MIT",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha ./test.js"
+    "test": "./node_modules/mocha/bin/mocha ./test/test.js"
   },
   "bin": {
     "o3o": "./bin/cli"
@@ -21,8 +23,6 @@
   "bugs": {
     "url": "https://github.com/turingou/o3o/issues"
   },
-  "author": "turing",
-  "license": "MIT",
   "dependencies": {
     "chance": "*",
     "optimist": "*",

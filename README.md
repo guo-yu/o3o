@@ -46,7 +46,7 @@ song sing 唱 歌
 ### Copy to clipboard with CLI (Windows and OSX)
 
 ```
-o3o smile --gbk|clip
+$ o3o smile --gbk|clip
 ```
 
 ### API
@@ -67,7 +67,7 @@ o3o smile --gbk|clip
     - bye (｡･ω･)ﾉﾞ
     - wanna more ? check out [yan.json](https://github.com/turingou/o3o/blob/master/yan.json) and type `tag` to search
 
-### o3o.available()
+#### o3o.available()
 
 - `return` [Array] list all available `tags` to search
 
