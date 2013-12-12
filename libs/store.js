@@ -1,5 +1,5 @@
 // store
-var yans = require('./yan.json').list;
+var yans = require('../yan.json').list;
 
 exports.createList = function() {
     var Store = {};
