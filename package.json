@@ -26,7 +26,8 @@
   "dependencies": {
     "chance": "*",
     "optimist": "*",
-    "iconv": "*"
+    "iconv": "*",
+    "readline": "*"
   },
   "devDependencies": {
     "mocha": "*",

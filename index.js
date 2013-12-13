@@ -8,22 +8,13 @@
 // @author: [guoyu](http://guoyu.me)
 
 var store = require('./libs/store'),
-    Chance = require('chance');
+    chance = require('chance');
 
 exports.fetch = function(type) {
-    if (store.check(type)) {
-        var list = store.list[type],
-            chance = new Chance(),
-            one = chance.integer({
-                min: 0,
-                max: list.length - 1
-            });
-        return list[one];
-    } else {
-        return false;
-    }
+    if (store.check(type)) return store.list[type][ new chance().integer({ min: 0, max: list.length - 1}];
+    return null;
 }
 
 exports.available = function() {
-    return store.list.available;
+    return store.list().available;
 }
