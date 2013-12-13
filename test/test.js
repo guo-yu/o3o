@@ -1,6 +1,6 @@
 // 执行各个功能点测试
-var main = require('./index'),
-    store = require('./store'),
+var main = require('../index'),
+    store = require('../libs/store'),
     should = require('should');
 
 describe('Available', function() {
