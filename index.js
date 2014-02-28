@@ -7,8 +7,8 @@
 // @brief: ascii emoticon store based on Node.js
 // @author: [guoyu](http://guoyu.me)
 
-var store = require('./libs/store'),
-    chance = require('chance');
+var chance = require('chance');
+var store = require('./libs/store');
 
 exports.fetch = function(type) {
     var list = store.list();
