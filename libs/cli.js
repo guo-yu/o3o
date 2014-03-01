@@ -16,12 +16,9 @@ var cliResponse = function(type) {
         process.stdout.write(s);
     } else {
         var s = o3o.fetch(type);
-        if (s) {
-            if (argv.gbk) s = convertToGBK(s);
-            process.stdout.write(s);
-        } else {
-            console.log(fail);
-        }
+        if (!s) return console.log(fail);
+        if (argv.gbk) s = convertToGBK(s);
+        process.stdout.write(s);
     }
 };
 
