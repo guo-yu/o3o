@@ -7,11 +7,9 @@ exports.list = function() {
     yans.forEach(function(line) {
         Store.available.push(line.tag);
         line.tag.split(" ").forEach(function(tag) {
-            if (typeof Store[tag] == 'undefined') {
-                Store[tag] = line.yan;
-            } else {
-                Store[tag] = Store[tag].concat(line.yan);
-            }
+            Store[tag] = (typeof Store[tag] == 'undefined') ? 
+            line.yan : 
+            Store[tag].concat(line.yan);
         });
     });
     return Store;
