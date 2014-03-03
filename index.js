@@ -12,8 +12,8 @@ var store = require('./libs/store');
 
 exports.fetch = function(type) {
     var list = store.list();
-    if (store.check(type)) return list[type][ new chance().integer({ min: 0, max: list.length - 1}) ];
-    return null;
+    if (!store.check(type)) return null;
+    return list[type][ new chance().integer({ min: 0, max: list.length - 1}) ];
 }
 
 exports.available = function() {
