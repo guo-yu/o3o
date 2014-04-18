@@ -1,3 +1,4 @@
+var clipboard = require('copy-paste');
 var o3o = require('../index');
 var pkg = require('../package');
 
@@ -10,9 +11,23 @@ function notfound() {
 
 module.exports = function() {
   var type = process.argv[2];
-  if (!type) return console.log(o3o('*'));
-  if (type == 'ls' || type == 'list') return console.log(o3o());
+  // fetch random type
+  if (!type) {
+    var emoticon = o3o('*');
+    return clipboard.copy(emoticon, function() {
+      console.log(emoticon);
+    });
+  }
+  // list all tags
+  if (type == 'ls' || type == 'list') {
+    return console.log(o3o());
+  }
+  // fetch spec type
   var emoticon = o3o(type);
+  // if not found, return fail message
   if (!emoticon) return notfound();
-  return console.log(emoticon);
+
+  return clipboard.copy(emoticon, function() {
+    console.log(emoticon);
+  });
 }

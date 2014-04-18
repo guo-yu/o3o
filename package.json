@@ -1,6 +1,6 @@
 {
   "name": "o3o",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "a ascii emoticon generator based on Node.js",
   "main": "index.js",
   "author": "turing <o.u.turing@gmail.com>",
@@ -30,7 +30,8 @@
     "url": "https://github.com/turingou/o3o/issues"
   },
   "dependencies": {
-    "chance": "*"
+    "chance": "~0.5.6",
+    "copy-paste": "~0.2.0"
   },
   "devDependencies": {
     "mocha": "*",

@@ -20,7 +20,7 @@ console.log('%s %s', smile, cry); // => (●'◡'●)ﾉ♥ π__π
 ````
 
 ### Cli Useage
-o3o also provides a command line tool to generate ascii emoticons.
+o3o also provides a command line tool to generate ascii emoticons. when using command line tool, o3o supports copy the emoticon to clipboard in both OSX, linux and Windows by default.
 
 ````
 // to use cli, install as a global module:
@@ -32,11 +32,6 @@ $ o3o smile // => ＾∀＾
 // list all available tags:
 $ o3o ls
 ````
-
-### Copy to clipboard (Windows and OSX )
-```
-$ o3o smile --gbk | clip
-```
 
 ### API
 
