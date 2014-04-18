@@ -5,13 +5,11 @@ a ascii emoticon generator based on Node.js (＞ω＜)
 ![screenshot](http://ww4.sinaimg.cn/large/61ff0de3gw1e760rs12a6j20ln0fbq52.jpg)
 
 ### Installation
-
 ````
 $ npm install o3o
 ````
 
 ### Example
-
 ````javascript
 var o3o = require('o3o');
 
@@ -44,7 +42,7 @@ $ o3o smile --gbk | clip
 
 #### o3o(type);
 - `type` [String] :
-  - `tags`: list all available `tags` to search, return `Array`;
+  - `null`: list all available `tags` to search, return `Array`;
   - smile ＾∀＾
   - laugh (/≥▽≤/)
   - anger o(￣ヘ￣o＃)
