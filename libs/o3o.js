@@ -13,7 +13,7 @@ function o3o(type) {
   var emoticons = mapEmoticons();
   if (!type) return Object.keys(emoticons);
   if (type === 'random' || type === '*') return randomEmoticons(emoticons);
-  if (!checkAvailable(type, emoticons)) return fetchRandom(emoticons['摊手']) + ' 404';
+  if (!checkAvailable(type, emoticons)) return null;
   return fetchRandom(emoticons[type]);
 }
 
