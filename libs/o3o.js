@@ -3,22 +3,28 @@ var yans = require('../yan').list;
 
 module.exports = o3o;
 
+/**
+*
+* o3o
+* @type[String]: the given type of emoticons
+*
+**/
 function o3o(type) {
-  if (!type) return null;
-  var emoticons = list();
-  if (type === 'tags') return emoticons.available;
-  if (!checkAvailable(type)) return null;
-  return emoticons[type][new chance().integer({
-    min: 0,
-    max: emoticons.length - 1
-  })];
+  var emoticons = mapEmoticons();
+  if (!type) return Object.keys(emoticons);
+  if (type === 'random' || type === '*') return randomEmoticons(emoticons);
+  if (!checkAvailable(type, emoticons)) return fetchRandom(emoticons['摊手']) + ' 404';
+  return fetchRandom(emoticons[type]);
 }
 
-function list() {
+/**
+*
+* Make a emoticons map from source JSON file `yan.json`
+*
+**/
+function mapEmoticons() {
   var Store = {};
-  Store.available = [];
   yans.forEach(function(line) {
-    Store.available.push(line.tag);
     line.tag.split(" ").forEach(function(tag) {
       Store[tag] = (typeof Store[tag] == 'undefined') ?
         line.yan :
@@ -28,7 +34,39 @@ function list() {
   return Store;
 }
 
-function checkAvailable(type) {
-  var Store = list();
-  return Object.prototype.hasOwnProperty.call(Store, type);
+/**
+*
+* Check if given key is available in given Object.
+* @key[String]
+* @list[Object]
+*
+**/
+function checkAvailable(key, list) {
+  return Object.prototype.hasOwnProperty.call(list || mapEmoticons(), key);
+}
+
+/**
+*
+* Fetch a random emoticon.
+* @list[Object]: the emoticons map.
+*
+**/
+function randomEmoticons(list) {
+  var emoticons = list || mapEmoticons();
+  var tags = Object.keys(emoticons);
+  return fetchRandom(emoticons[fetchRandom(tags)]);
+}
+
+/**
+*
+* Fetch a random element from a array
+* @src[Array]: a array contains different elements.
+*
+**/
+function fetchRandom(src) {
+  if (!src || src.length === 0) return null;
+  return src[new chance().integer({
+    min: 0,
+    max: src.length - 1
+  })];
 }

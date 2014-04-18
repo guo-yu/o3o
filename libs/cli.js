@@ -12,7 +12,7 @@ function convertToGBK(s) {
 function cliResponse(type) {
   var fail = o3o('摊手') + '没有这个情绪类别哦。。要不帮我加上？欢迎 fork & PR：' + pkg.repository.url;
   if (type == 'ls') {
-    var s = JSON.stringify(o3o('tags'), null, 4);
+    var s = JSON.stringify(o3o(), null, 4);
     if (argv.gbk) s = convertToGBK(s);
     process.stdout.write(s);
   } else {
