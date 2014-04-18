@@ -2,7 +2,7 @@
 
 a ascii emoticon generator based on Node.js (＞ω＜)
 
-![screenshot](http://ww4.sinaimg.cn/large/61ff0de3gw1e760rs12a6j20ln0fbq52.jpg)
+![screenshot](http://ww4.sinaimg.cn/large/61ff0de3gw1efjv5irqm0j20ln0fi75q.jpg)
 
 ### Installation
 ````
@@ -61,7 +61,7 @@ Wanna more ? check out [yan.json](https://github.com/turingou/o3o/blob/master/ya
 - [o3o Workflow for Alfred 2](http://lucifr.com/2013/08/01/o3o-workflow-for-alfred/) by lucifr
 - [o3o based on Ruby](https://github.com/coolzilj/o3o) by [coolzilj](https://github.com/coolzilj)
 
-### Run unit-test (Mocha)
+### Tests
 ````
 $ git clone https://github.com/turingou/o3o.git
 $ cd o3o

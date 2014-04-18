@@ -3,7 +3,7 @@
   "version": "0.0.6",
   "description": "a ascii emoticon generator based on Node.js",
   "main": "index.js",
-  "author": "turing",
+  "author": "turing <o.u.turing@gmail.com>",
   "license": "MIT",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha ./test/test.js"
@@ -14,10 +14,13 @@
   "keywords": [
     "emoji",
     "ascii",
+    "smile",
     "smiles",
     "ascii art",
     "nippon",
-    "comic"
+    "comic",
+    "emoticon",
+    "emoticons"
   ],
   "repository": {
     "type": "git",
@@ -27,10 +30,7 @@
     "url": "https://github.com/turingou/o3o/issues"
   },
   "dependencies": {
-    "chance": "*",
-    "iconv": "*",
-    "readline": "*",
-    "optimist": "*"
+    "chance": "*"
   },
   "devDependencies": {
     "mocha": "*",
