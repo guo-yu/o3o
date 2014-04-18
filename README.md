@@ -1,7 +1,6 @@
-o3o ![npm](https://badge.fury.io/js/o3o.png)
---- 
+## o3o ![npm](https://badge.fury.io/js/o3o.png)
 
-(＞ω＜) ascii emoticon generator
+a ascii emoticon generator based on Node.js (＞ω＜)
 
 ![screenshot](http://ww4.sinaimg.cn/large/61ff0de3gw1e760rs12a6j20ln0fbq52.jpg)
 
@@ -16,76 +15,55 @@ $ npm install o3o
 ````javascript
 var o3o = require('o3o');
 
-console.log(o3o.fetch('smile')); // will output (●'◡'●)ﾉ♥
-console.log(o3o.fetch('cry')); // will output π__π
+var smile = o3o('smile');
+var cry = o3o('cry');
+
+console.log('%s %s', smile, cry); // => (●'◡'●)ﾉ♥ π__π
 ````
 
-### CLI Useage
+### Cli Useage
+o3o also provides a command line tool to generate ascii emoticons.
+
 ````
-$ sudo npm install o3o -g
-$ o3o smile
-$ ＾∀＾ 
+// to use cli, install as a global module:
+$ [sudo] npm install o3o -g 
 
-// list all available tags
-$ o3o ls // short of list
-// results
-['laugh 笑',
-  'wanna',
-  'chill 摊手 手',
-  'smile',
-  'angry 生气 上火 恼 怒 疯 啊 草 cao 靠 kao',
-  '猪 zhu pig',
-  'sorry 错 道歉 该打 跪 cuo'
-  ...... ]
+// seach emoticons by tag:
+$ o3o smile // => ＾∀＾
 
-// or random
-$ o3o available // list ONLY one available type
-// result
-song sing 唱 歌
+// list all available tags:
+$ o3o ls
 ````
 
-### Copy to clipboard with CLI (Windows and OSX)
-
+### Copy to clipboard (Windows and OSX )
 ```
-$ o3o smile --gbk|clip
+$ o3o smile --gbk | clip
 ```
 
 ### API
 
-#### o3o.fetch(type) 
-
+#### o3o(type);
 - `type` [String] :
-    - smile ＾∀＾
-    - laugh (/≥▽≤/)
-    - anger o(￣ヘ￣o＃)
-    - cry ಥ_ಥ
-    - wtf （╯－＿－）╯╧╧
-    - surprise （°ο°）
-    - chill ╮(╯_╰)╭
-    - shy o(*////▽////*)q
-    - wanna ˋ▽ˊ
-    - kiss (╭￣3￣)╭♡
-    - bye (｡･ω･)ﾉﾞ
-    - wanna more ? check out [yan.json](https://github.com/turingou/o3o/blob/master/yan.json) and type `tag` to search
+  - `tags`: list all available `tags` to search, return `Array`;
+  - smile ＾∀＾
+  - laugh (/≥▽≤/)
+  - anger o(￣ヘ￣o＃)
+  - cry ಥ_ಥ
+  - wtf （╯－＿－）╯╧╧
+  - surprise （°ο°）
+  - chill ╮(╯_╰)╭
+  - shy o(*////▽////*)q
+  - wanna ˋ▽ˊ
+  - kiss (╭￣3￣)╭♡
+  - bye (｡･ω･)ﾉﾞ
 
-#### o3o.available()
+Wanna more ? check out [yan.json](https://github.com/turingou/o3o/blob/master/yan.json) and type `tag` to search
 
-- `return` [Array] list all available `tags` to search
-
-### Pull Request Welcome !
-
-- fork this repo
-- feel free to add your feature or emoticons
-- make sure your feature are fully tested!
-- send me a PR, and enjoy !
-
-### Rebound
-
+### Rebounds
 - [o3o Workflow for Alfred 2](http://lucifr.com/2013/08/01/o3o-workflow-for-alfred/) by lucifr
 - [o3o based on Ruby](https://github.com/coolzilj/o3o) by [coolzilj](https://github.com/coolzilj)
 
 ### Run unit-test (Mocha)
-
 ````
 $ git clone https://github.com/turingou/o3o.git
 $ cd o3o
@@ -98,6 +76,15 @@ $ npm test
 - `0.0.6` clipboard supported(both OSX and Windows), thx [@flynngao](https://github.com/flynngao) and [@breeswish](https://github.com/breeswish)
 - `0.0.5` support list all available emoticons
 - `0.0.4` thx [@sivaGao](https://github.com/ghlndsl) , more than 1000 emoticons added !!
+
+### Contributing
+- Fork this repo
+- Clone your repo
+- Install dependencies
+- Checkout a feature branch
+- Feel free to add your features
+- Make sure your features are fully tested
+- Open a pull request, and enjoy <3
 
 ### MIT license
 Copyright (c) 2014 turing &lt;o.u.turing@gmail.com&gt;

@@ -4,18 +4,7 @@
 // / /_/ /__/ / /_/ /
 // \____/____/\____/ 
 //
-// @brief: ascii emoticon store based on Node.js
-// @author: [guoyu](http://guoyu.me)
+// @brief: a ascii emoticon generator based on Node.js
+// @author: [turingou](http://guoyu.me)
 
-var chance = require('chance');
-var store = require('./libs/store');
-
-exports.fetch = function(type) {
-    var list = store.list();
-    if (!store.check(type)) return null;
-    return list[type][ new chance().integer({ min: 0, max: list.length - 1}) ];
-}
-
-exports.available = function() {
-    return store.list().available;
-}
+module.exports = require('./libs/o3o');
