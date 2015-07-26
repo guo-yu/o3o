@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "build": "node_modules/.bin/babel libs --out-dir dist --source-maps --watch",
-    "test": "node_modules/mocha/bin/mocha tests/*.js --require tests/babelhook"
+    "test": "node_modules/mocha/bin/mocha test/*.js --require test/babelhook"
   },
   "bin": "bin/cli",
   "keywords": [
