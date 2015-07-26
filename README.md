@@ -55,6 +55,7 @@ Wanna more ? check out [yan.json](https://github.com/turingou/o3o/blob/master/ya
 ### Rebounds
 - [o3o Workflow for Alfred 2](http://lucifr.com/2013/08/01/o3o-workflow-for-alfred/) by lucifr
 - [o3o based on Ruby](https://github.com/coolzilj/o3o) by [coolzilj](https://github.com/coolzilj)
+- [o3o based on Go](https://github.com/mozillazg/go-o3o) by [mozillazg](https://github.com/mozillazg)
 
 ### Tests
 ````
