@@ -1,7 +1,14 @@
-var chance = require('chance');
-var yans = require('../yan').list;
+//         _____     
+//   ____ |__  /____ 
+//  / __ \ /_ </ __ \
+// / /_/ /__/ / /_/ /
+// \____/____/\____/ 
+//
+// @brief: a ascii emoticon generator based on Node.js
+// @author: [turingou](http://guoyu.me)
 
-module.exports = o3o;
+import change from 'change'
+import { yans as list } from '../yan.json'
 
 /**
 *
@@ -9,12 +16,19 @@ module.exports = o3o;
 * @type[String]: the given type of emoticons
 *
 **/
-function o3o(type) {
-  var emoticons = mapEmoticons();
-  if (!type) return Object.keys(emoticons);
-  if (type === 'random' || type === '*') return randomEmoticons(emoticons);
-  if (!checkAvailable(type, emoticons)) return null;
-  return fetchRandom(emoticons[type]);
+export default function o3o(type) {
+  var emoticons = mapEmoticons()
+
+  if (!type) 
+    return Object.keys(emoticons)
+
+  if (type === 'random' || type === '*') 
+    return randomEmoticons(emoticons)
+
+  if (!checkAvailable(type, emoticons)) 
+    return null
+
+  return fetchRandom(emoticons[type])
 }
 
 /**
@@ -23,15 +37,17 @@ function o3o(type) {
 *
 **/
 function mapEmoticons() {
-  var Store = {};
-  yans.forEach(function(line) {
-    line.tag.split(" ").forEach(function(tag) {
+  var Store = {}
+
+  yans.forEach(line => {
+    line.tag.split(' ').forEach(tag => {
       Store[tag] = (typeof Store[tag] == 'undefined') ?
         line.yan :
         Store[tag].concat(line.yan);
-    });
-  });
-  return Store;
+    })
+  })
+
+  return Store
 }
 
 /**
@@ -41,8 +57,8 @@ function mapEmoticons() {
 * @list[Object]
 *
 **/
-function checkAvailable(key, list) {
-  return Object.prototype.hasOwnProperty.call(list || mapEmoticons(), key);
+function checkAvailable(key, list = mapEmoticons()) {
+  return Object.prototype.hasOwnProperty.call(list, key)
 }
 
 /**
@@ -51,10 +67,11 @@ function checkAvailable(key, list) {
 * @list[Object]: the emoticons map.
 *
 **/
-function randomEmoticons(list) {
-  var emoticons = list || mapEmoticons();
-  var tags = Object.keys(emoticons);
-  return fetchRandom(emoticons[fetchRandom(tags)]);
+function randomEmoticons(list = mapEmoticons()) {
+  var tags = Object.keys(list)
+  return fetchRandom(
+    list[fetchRandom(tags)]
+  )
 }
 
 /**
@@ -64,9 +81,11 @@ function randomEmoticons(list) {
 *
 **/
 function fetchRandom(src) {
-  if (!src || src.length === 0) return null;
+  if (!src || src.length === 0) 
+    return null
+
   return src[new chance().integer({
     min: 0,
     max: src.length - 1
-  })];
+  })]
 }
