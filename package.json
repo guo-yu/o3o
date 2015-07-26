@@ -6,6 +6,7 @@
   "author": "turing <o.u.turing@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "build": "node_modules/.bin/babel libs --out-dir dist --source-maps --watch",
     "test": "node_modules/mocha/bin/mocha tests/*.js --require tests/babelhook"
   },
   "bin": "bin/cli",
