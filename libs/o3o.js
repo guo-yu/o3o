@@ -7,8 +7,8 @@
 // @brief: a ascii emoticon generator based on Node.js
 // @author: [turingou](http://guoyu.me)
 
-import change from 'change'
-import { yans as list } from '../yan.json'
+import chance from 'chance'
+import yans from '../yan.json'
 
 /**
 *
@@ -39,7 +39,7 @@ export default function o3o(type) {
 function mapEmoticons() {
   var Store = {}
 
-  yans.forEach(line => {
+  yans.list.forEach(line => {
     line.tag.split(' ').forEach(tag => {
       Store[tag] = (typeof Store[tag] == 'undefined') ?
         line.yan :

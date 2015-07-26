@@ -16,9 +16,9 @@ exports['default'] = o3o;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _change = require('change');
+var _chance = require('chance');
 
-var _change2 = _interopRequireDefault(_change);
+var _chance2 = _interopRequireDefault(_chance);
 
 var _yanJson = require('../yan.json');
 
@@ -28,6 +28,8 @@ var _yanJson = require('../yan.json');
 * @type[String]: the given type of emoticons
 *
 **/
+
+var _yanJson2 = _interopRequireDefault(_yanJson);
 
 function o3o(type) {
   var emoticons = mapEmoticons();
@@ -49,7 +51,7 @@ function o3o(type) {
 function mapEmoticons() {
   var Store = {};
 
-  yans.forEach(function (line) {
+  _yanJson2['default'].list.forEach(function (line) {
     line.tag.split(' ').forEach(function (tag) {
       Store[tag] = typeof Store[tag] == 'undefined' ? line.yan : Store[tag].concat(line.yan);
     });
@@ -93,7 +95,7 @@ function randomEmoticons() {
 function fetchRandom(src) {
   if (!src || src.length === 0) return null;
 
-  return src[new chance().integer({
+  return src[new _chance2['default']().integer({
     min: 0,
     max: src.length - 1
   })];
