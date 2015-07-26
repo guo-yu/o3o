@@ -1,16 +1,14 @@
 {
   "name": "o3o",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "a ascii emoticon generator based on Node.js",
-  "main": "index.js",
+  "main": "dist/o3o.js",
   "author": "turing <o.u.turing@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha ./test/test.js"
+    "test": "node_modules/mocha/bin/mocha tests/*.js --require tests/babelhook"
   },
-  "bin": {
-    "o3o": "./bin/cli"
-  },
+  "bin": "bin/cli",
   "keywords": [
     "emoji",
     "ascii",
@@ -30,11 +28,12 @@
     "url": "https://github.com/turingou/o3o/issues"
   },
   "dependencies": {
-    "chance": "~0.5.6",
-    "copy-paste": "~0.2.0"
+    "chance": "0.7.6",
+    "copy-paste": "0.2.0"
   },
   "devDependencies": {
-    "mocha": "*",
-    "should": "*"
+    "babel": "^5.8.5",
+    "mocha": "^2.2.5",
+    "should": "^7.0.2"
   }
 }
