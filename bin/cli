@@ -4,7 +4,7 @@ var clipboard = require('copy-paste')
 var o3o = require('../dist/o3o')
 var pkg = require('../package.json')
 
-((){
+;(function (){
   var type = process.argv[2]
 
   // fetch random type
